@@ -25,7 +25,6 @@ if {![info exists Z7_PATH]} {
 		}
 	}}
 }
-puts "Test 7z-path: $Z7_PATH"
 
 # ensure we can test using executable from $Z7_PATH (valid platform, e. g. bypass cross-platform build):
 apply {{} {
@@ -53,6 +52,8 @@ proc 7z_2_bin {args} {
 	}
 	return $b
 }
+
+puts [outputChannel] "Test 7z path: $Z7_PATH, version: [7z --version]"
 
 proc 7z_get_info {args} {
 	set res [7z l -slt {*}$args]

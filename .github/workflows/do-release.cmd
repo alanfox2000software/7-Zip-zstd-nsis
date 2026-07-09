@@ -16,7 +16,9 @@ mkdir %WD%\totalcmd
 mkdir %SKEL%
 cd %SKEL%
 curl %URL% -L -o 7-Zip.exe
+IF %errorlevel% NEQ 0 EXIT 1
 %SZIP% x 7-Zip.exe
+IF %errorlevel% NEQ 0 EXIT 1
 del 7-Zip.exe
 goto start
 
